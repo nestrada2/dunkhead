@@ -1,0 +1,91 @@
+/* ------------------------------ Entire Page ------------------------------ */
+* {
+    /* Reset Default Settings */
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box; /* Ensure all Elements have Padding & Border included in Width & Height */
+    font-family:'Press Start 2P';
+    text-transform: lowercase;
+}
+
+body {
+    background-color: #cbc4b9 !important;
+}
+
+/* ------------------------------  Navagation Bar ------------------------------ */
+.navbar {
+    background:transparent; /* so goes directly on top of the page (1) */
+    background-color: transparent; /* (1) */
+    top: 0; /* 0px from the top */
+    width: 100%; /* Fill the screen */
+}
+
+.navbar-nav {
+    background: transparent; /* (1) */
+    background-color: transparent; /* (1) */
+    margin-left: auto; /* By Default Bootstrap Navbar Links Aligns to the Left, this ensures it aligns to the Right */
+}
+
+/* Transition Navbar Links from Black to White */
+.navbar-nav a {
+    transition: color 1.2s ease-in-out;
+}
+
+.navbar .container-fluid {
+    background: transparent; /* (1) */
+    background-color: transparent; /* (1) */
+    
+}
+
+.navbar .collapse {
+    background: transparent; /* (1) */
+    background-color: transparent; /* (1) */
+ 
+}
+
+.nav-item {
+    text-align: right; /* (2) */
+}
+
+/* Add Background Color to the Navagation Bar when Scrolling */
+.scroll {
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Shoe Image on Navagation Bar */
+#logo {
+    width: 80px;
+}
+
+/* -------------------- Change Shoe Image on Navagation Bar when Screen Size is Small: 800px -------------------- */
+@media (max-width: 800px) {
+    #logo {
+        width: 60px;
+    }
+}
+
+/* ------------------------------ Footer ------------------------------ */
+.footer {
+    font-size: 60%;
+}
+
+/*
+-------------------- Footnotes --------------------
+    1. Bootstrap navagation bars contain a lot of div elements therefore if we want the navagation bar to be transparent
+    with the background we have to make each of those div's transparent as well. Othewrwise, parts of the navagation bar
+    will remain to have the bootstrap's default styling.
+
+    2. Bootstrap makes a copy of 'a' tags so when animating the collapse button within the navagation bar when clicked there 
+    would be a delay when links were coming down but, nav-items class use for both the static and dynamic nav links so this 
+    class '.nav-item' ensures that they are justified throughout all stages of the animation.
+*/
+
+/*
+-------------------- References --------------------
+    Lowercase Letters - https: //www.w3schools.com/cssref/pr_text_text-transform.php
+    Navbar Align Right - https: //www.geeksforgeeks.org/how-to-align-navbar-items-to-the-right-in-bootstrap-4/#
+    Gradient Color - https: //cssgradient.io/gradient-backgrounds/
+*/

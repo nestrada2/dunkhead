@@ -1,0 +1,167 @@
+
+<div id="main">
+
+    <!-- -------------------- PAGE 1 -------------------- -->
+    <br>
+    <div id="first-page">          
+
+        <!-- Nespaper Title -->
+        <h4 id="paper-title">the post dunk</h4>
+        <br>
+
+        <!-- Coffee Stain -->
+        <div class="coffee-stain">
+            <img src="/public/img/Coffee Stains/1x/Asset 1.png">
+        </div>
+
+        <!-- Current Issue Information -->
+        <div id="info">
+            <!-- Volume -->
+            <div id="vol">
+                <span id="vol">vol no.{{vol}}</span>
+            </div>
+            <!-- Date -->
+            <div id="date">
+                <span id="date">{{date}}</span>
+            </div>
+            <!-- Cost -->
+            <div id="cost">
+                <span id="cost">{{cost}}&#162;</span>
+            </div>
+        </div>
+
+        <!-- EXTRA! -->
+        <h4 id="extra-title" class="animate__animated animate__tada animate__delay-1s">EXTRA!</h4>
+
+        <!-- Advertisements -->
+        <div id="ads">
+            <!-- 1st Advertisement -->
+            <div id="ad1">
+                <!-- Staple Image -->
+                <div class="image">
+                    <img src="/public/img/Gifs/pigeon beats.gif" alt="pigeon listening to music" class="img-fluid">
+                </div>
+                <br />
+                <!-- Staple Link -->
+                <h6><u><a href="https://www.staplepigeon.com/" style="color: inherit;" target="_blank">staple | ny</a></u> <span class="new">sale</span></h6>
+                <!-- Staple Info -->
+                <p>staple is a world-renowned brand inspired by street culture and
+                design, which reflects the gritty and never-ending energy New Yorkers (and all urban
+                dwellers) possess.</p>
+
+            </div>
+            <!-- Coupon -->
+            <div id="coupon">
+                <h6><u>ads!</u></h6>
+                <p>We have to include<br> &lt;--- these ads ---&gt; <br> to support our site. </p>
+                <h6>tip! use our name, <i>dunkhead</i>, for a 10% coupon</h6>
+            
+            </div>
+            <!-- 2rd Advertisement -->
+            <div id="ad2">
+                <!-- Nike by You Image -->
+                <div class="image">
+                    <img src="/public/img/Gifs/shoe studio.gif" alt="nike by you" class="img-fluid">
+                </div>
+                <br />
+                <!-- Nike by You Link -->
+                <h6><u><a href="https://www.nike.com/u/custom-nike-dunk-low-by-you-shoes-10001477" style="color: inherit;" target="_blank">nike by you</a></u> <span class="new">custom</span></h6>
+                <!-- Nike by You Info -->
+                <p>create your very own custom, unique, one-of-a-kind nike dunks here on nike's website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------- PAGE 2 -------------------- -->
+
+    <div id="second-page">
+
+        <!-- Page 2 Left Side: Upcoming Dunk SBs -->
+        <div id="page-two-left">
+            <!-- Title of Section -->
+            <h2 id="upcoming">upcoming</h2>
+            <br />
+            <!-- Shoes -->
+            <div class="shoe" id="upcoming-shoes">
+            </div>
+        </div>
+
+        <!-- Page 2 Left Side: Unconfirmed Dunk SBs -->
+        <div id="page-two-mid">
+            <!-- Title of Section -->
+            <h2 id="unconfirmed">unconfirmed</h2>
+            <br />
+            <!-- Shoes -->
+            <div class="shoe" id="unconfirmed-shoes">
+            </div>
+        </div>
+
+        <!-- Page 2 Left Side: Past Dunk SBs -->
+        <div id="page-two-right">
+            <!-- Title of Section -->
+            <h2 id="past">past</h2>
+            <br />
+            <!-- Shoes -->
+            <div class="shoe" id="past-shoes">
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------- PAGE 3 -------------------- -->
+
+    <!-- Page 3 Left Side -->
+    <div id="page-three">
+        <!-- Dunkhead Logo -->
+        <div id="page-three-left">
+            <h1>dunkhead</h1>
+        </div>
+
+        <!-- Page 3 Right Side -->
+        <div id="page-three-right">
+            <!-- Nike SB Pixel Art -->
+            <div class="page3-image">
+                <!-- Nike SB Link -->
+                <a href="https://www.nikesb.com/" target="_blank"><img src="/public/img/Dunk Sb Pixel Art/Misc/nike-sb-logo.png" id="sb-logo" alt="nike dunk sb logo"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------- PAGE 4 -------------------- -->
+
+    <div id="page-four">
+
+        <div id="mario-video">
+            <!-- Background Video -->
+            <video autoplay muted plays-inline class="back-video" loop>
+                <source src="/public/videos/dunkhead news.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Haze Cloud Tag -->
+        <div class="tags">
+            <img id="haze" src="/public/img/Tags/haze.png" alt="haze">
+        </div>
+    </div>
+</div>
+
+{{#section 'script'}}
+    <!-- News CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/news.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- GSAP (Animation) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <!-- defer - load html first, then run JS -->
+
+    <!-- JavaScript File -->
+    <script src="/public/scripts/news.js" defer></script>
+    <!-- defer - load html first, then run JS -->
+{{/section}}
+
+<!-- -------------------- References --------------------
+   Animate CSS - https://animate.style/
+   Bootstrp Responsive Images - https://getbootstrap.com/docs/4.0/content/images/
+-->

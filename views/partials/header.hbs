@@ -1,0 +1,32 @@
+<!-- Navation Bar -->
+<nav id="mainNav" class="navbar navbar-expand-lg py-1 {{#if isNews}} sticky-top {{else}} fixed-top {{/if}}">
+    <div class="container-fluid">
+        <!-- Dunkhead Brand -->
+        <a href="/" class="navbar-brand">
+            <!-- Logo Image -->
+            <img id="logo" src="/public/img/Dunk Sb Pixel Art/Silver Box/takashi_right.png">
+        </a>
+
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-links" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Dunkhead Links -->
+        <div class="collapse navbar-collapse" id="nav-links">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link {{#if isMain}} active {{/if}}">home</a>
+                <a href="/collection" class="nav-item nav-link {{#if isCollection}} active {{/if}}">collection</a>
+                <a href="/news" class="nav-item nav-link {{#if isNews}} active {{/if}}">news</a>
+                <a href="/login" class="nav-item nav-link {{#if isLogin}} active {{/if}}">login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- -------------------- References --------------------
+    Container-fluid - https://getbootstrap.com/docs/5.0/layout/containers/
+    Navagation Positions - https://getbootstrap.com/docs/5.0/helpers/position/
+    Navbar Align Right - https://www.geeksforgeeks.org/how-to-align-navbar-items-to-the-right-in-bootstrap-4/#
+    Navbar Toggler Align Right - https://getbootstrap.com/docs/4.1/components/navbar/#:~:text=Navbar%20togglers%20are%20left%2Daligned,the%20placement%20of%20the%20toggler.
+-->

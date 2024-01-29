@@ -1,0 +1,111 @@
+<!-- Ready / Wallop -->
+<div class="content">
+    <p id="ready">ready?</p>
+    <p id="wallop">wallop!</p>
+</div>
+
+<!-- Shoe Grid / Border -->
+<div class="shoe-grid">
+</div>
+
+<!-- Shoes -->
+<div class="shoe-holder">
+            <!-- Beginning of For Loop-->
+            {{#each dunks}}
+            <div class="dunk">
+
+                    <!-- Shoe Images - Box / Shoe - StyleID - Nickname - Background Color -->
+                    <input type="hidden" class="shoe-img" name="" id="" value="/public/{{img}}">
+                    <input type="hidden" class="box-img" name="" id="" value="/public/img/Dunk Sb Pixel Art/Boxes/{{box}}-shoe-box.png">
+                    <input type="hidden" class="style-id" name="" id="" value="{{styleID}}">
+                    <input type="hidden" class="shoe-nickname" name="" id="" value="{{nickName}}">
+                    <input type="hidden" class="shoe-background" name="" id="" value="{{background}}">
+                
+            </div>
+            {{/each}}   
+</div>
+
+<!-- Modal -->
+<div class="modal fade modal-xl" id="shoe-info" tabindex="-1" aria-labelledby="shoeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="shoe-title"></h1>
+                <button type="button" class="btn nes-btn" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <!-- Shoe's Primary Information -->
+                <div class="shoe-header">
+                    <h5 id="shoe-releaseDate"></h5>
+                    <h5 id="shoe-silhoutte"></h5>
+                    
+                    <!-- Shoe Nickname & Shoe Image-->
+                    <div class="shoe-wrapper">
+                        <h1 id="shoe-nickName"></h1>
+                        <img id="shoe-imgURL" src="" alt="dunk sb">
+                    </div>
+                    
+                </div>
+
+                <!-- Tell Me More!: Collapse Button -->
+                <button class="nes-btn" id="shoe-btn" type="button" data-bs-toggle="collapse" data-bs-target="#shoeCollapse"
+                    aria-expanded="false" aria-controls="shoeCollapse">
+                    tell me more!
+                </button>
+         
+                <!-- More Details about the Shoe: Collapse Card -->
+                <div class="collapse" id="shoeCollapse">
+                    <div class="card card-body">
+                        <p id="shoe-description"></p>
+                        <p>colorway: <span id="shoe-colorway"></span></p>
+                        <p>style #: <span id="shoe-styleID"></span></p>
+                        <p>retail price: $<span id="shoe-retailPrice"></span></p>
+
+                        <!-- Resell Prices -->
+                        <table class="table resellPriceTable">
+                            <thead>
+                                <tr></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="shoe-sizes">check</tr>
+                                <tr class="shoe-price"></tr>
+                                
+                        
+                            </tbody>
+                        
+                        </table>
+                        <p>resell links: <span id="shoe-resellLinks"></span></p>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
+            <!-- Modal Footer: Close Button -->
+            <div class="modal-footer">
+                <button type="button" class="btn nes-btn" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#section 'script'}}
+    <!-- Collection CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/styles/collection.css">
+    
+    <!-- GSAP (Animation) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <!-- defer - load html first, then run JS -->
+    
+    <!-- JavaScript File -->
+    <script src="/public/scripts/collection.js" defer></script>
+    <!-- defer - load html first, then run JS -->
+{{/section}}
+
+<!-- -------------------- References --------------------
+    SB Boxes - https://www.sneakerfreaker.com/features/a-complete-retrospective-of-nike-sb-boxes-and-eras 
+    Dunk Images - https://www.nicekicks.com/nike-sb-dunk-history/ 
+    Bootstap Modal - https://getbootstrap.com/docs/4.0/components/modal/
+    Booststrap Collapse - https://getbootstrap.com/docs/4.0/components/collapse/
+-->

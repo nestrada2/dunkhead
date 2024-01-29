@@ -1,0 +1,99 @@
+<!-- Confirmation Message after Submitting -->
+<div class="contact-confirmation">
+</div>
+
+<!-- Contact Form (1) -->
+<form class="contact-form animate__animated animate__bounceInDown" onsubmit="event.preventDefault();"> 
+    <!-- Name -->
+    <div class="form-group row">
+        <label for="contact-name" class="col-form-label">name:</label>
+        <div >
+            <input type="text" class="form-control" id="contact-name" placeholder="hi! my name is...">
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group row">
+        <label for="contact-email" class="col-form-label">email:</label>
+        <div >
+            <input type="email" class="form-control" id="contact-email" placeholder="spam me @">
+        </div>
+    </div>
+
+    <!-- Text Area -->
+    <div class="form-group row">
+        <label for="message" class="col-form-label">message:</label>
+        <div >
+            <textarea class="form-control" id="contact-message" rows="5" placeholder="dunkhead is awesome and..."></textarea>
+        </div>
+    </div>
+
+    <br>
+    
+    <!-- Buttons -->
+    <div class="form-group row">
+        <div >
+            <!-- Submit -->
+            <button class="nes-btn is-primary" id="sup-btn">sup</button>
+            <!-- Reset -->
+            <button type="reset" class="nes-btn is-error" id="nvm-btn">nvm</button>
+        </div>
+    </div>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade modal-lg alert-box" tabindex="-1" aria-labelledby="validation-errors" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Modal Title (2) -->
+                <h1 class="modal-title fs-5" id="validation-errors-title"></h1>
+                
+                <!-- Close Button -->
+                <button type="button" class="btn nes-btn" id="alert-close-btn" data-bs-dismiss="modal"
+                    aria-label="Close">x
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Warning! Title -->
+                <h1>warning!</h1>
+                <br>
+                <!-- Validation Error Message -->
+                <span class="pop-up-message"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#section 'script'}}
+<!-- Contact CSS -->
+<link rel="stylesheet" type="text/css" href="/public/styles/contact.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- JavaScript File -->
+<script src="/public/scripts/contact.js" defer></script>
+<!-- defer - load html first, then run JS -->
+
+<!-- List of Words -->
+<script type="text/javascript" src="/public/scripts/words.js" defer></script>
+<!-- defer - load html first, then run JS -->
+{{/section}}
+
+<!-- -------------------- Footnotes --------------------
+    1. use 'onsubmit="event.preventDefault();' on form tag to prevent default of browser creating object to 
+    send to server, doing the object through ajax prevent page from reloading so that text appears right after 
+    the animation same form can animate out, without it the page reloads. 
+
+    2. Default bootstrap styling, leave empty otherwise if remove h1 tag header than the close button get aligns to the 
+    left of the modal instead of the right.
+-->
+
+<!-- -------------------- References --------------------
+    Bootstrap Form - https://getbootstrap.com/docs/4.0/components/forms/
+    Center a Website - https://www.w3schools.com/howto/howto_css_center_website.asp
+    Alert Message - https://www.w3schools.com/howto/howto_js_alert.asp
+-->

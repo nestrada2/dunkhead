@@ -1,0 +1,102 @@
+<!-- Confirmation Message after Submitting -->
+<div class="login-confirmation">
+    {{!-- <span id="login-afterthough"></span> --}}
+</div>
+
+<!-- Sign Up Form (1) -->
+<form class="contact-form animate__animated animate__bounceInLeft" onsubmit="event.preventDefault();">
+    <!-- Username -->
+    <div class="form-group row">
+        <label for="login-name" class="col-form-label">username:</label>
+        <div>
+            <input type="text" class="form-control" id="login-name" placeholder="my alter ego is...">
+        </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group row">
+        <label for="login-password" class="col-form-label">password:</label>
+        <div>
+            <input type="password" class="form-control" id="login-password" placeholder="my secret word is...">
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Buttons -->
+    <div class="form-group row">
+        <div>
+            <!-- Submit -->
+            <button class="nes-btn is-primary" id="yep-btn">yep</button>
+            <!-- Reset -->
+            <button type="reset" class="nes-btn is-error" id="nope-btn">nope</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <br>
+
+    <p>what!! no username?</p>
+
+    <!-- Submit -->
+    {{!-- <a href="/views/login.hbs">sign-up</a> --}}
+    <button class="nes-btn is-primary" id="sign-up-btn">sign-up?</button>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade modal-lg alert-box" tabindex="-1" aria-labelledby="validation-errors" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Modal Title (2) -->
+                <h1 class="modal-title fs-5" id="validation-errors-title"></h1>
+
+                <!-- Close Button -->
+                <button type="button" class="btn nes-btn" id="alert-close-btn" data-bs-dismiss="modal"
+                    aria-label="Close">x
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Warning! Title -->
+                <h1>warning!</h1>
+                <br>
+                <!-- Validation Error Message -->
+                <span class="pop-up-message"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#section 'script'}}
+<!-- Contact CSS -->
+<link rel="stylesheet" type="text/css" href="/public/styles/contact.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- Typed JS -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+<!-- defer - load html first, then run JS -->
+
+<!-- JavaScript File -->
+<script src="/public/scripts/login.js" defer></script>
+<!-- defer - load html first, then run JS -->
+{{/section}}
+
+<!-- -------------------- Footnotes --------------------
+    1. use 'onsubmit="event.preventDefault();' on form tag to prevent default of browser creating object to 
+    send to server, doing the object through ajax prevent page from reloading so that text appears right after 
+    the animation same form can animate out, without it the page reloads. 
+
+    2. Default bootstrap styling, leave empty otherwise if remove h1 tag header than the close button get aligns to the 
+    left of the modal instead of the right.
+-->
+
+<!-- -------------------- References --------------------
+     Bootstrap Form - https://getbootstrap.com/docs/4.0/components/forms/
+    Center a Website - https://www.w3schools.com/howto/howto_css_center_website.asp
+    Alert Message - https://www.w3schools.com/howto/howto_js_alert.asp
+-->

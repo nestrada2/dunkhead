@@ -1,0 +1,52 @@
+
+/* -------------------- Contact Form -------------------- */
+.contact-form {
+    width: 30%; 
+    margin: 10% auto auto; /* top, (right & left), bottom */
+}
+
+/* -------------------- Modal: Validation Error -------------------- */
+.modal {
+    padding: 100px 0; /* top & bottom */
+}
+
+/* Warning! */
+h1 {
+    text-transform: uppercase; /* (1) */
+    text-align: center;
+}
+
+.modal-body, .modal-header {
+    background-color: rgb(241, 106, 107);
+    color: white;
+}
+
+.modal-header {
+    border: none; /* removes white line under the modal's header */
+}
+
+#alert-close-btn {
+    color: white; /* x text */
+}
+
+/* Overwrite the NES CSS Styling (2) */
+#alert-close-btn::after {
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+/* 
+-------------------- Footnotes --------------------
+    1. Overwriting the Universal's Selector (*) Styling for All Texts to be Lowercase that was set up in style.css
+
+    2. the NES CSS styling does shadowing for the button using ::after, so it's insert an element after whatever is selected 
+    in this case it's the button
+*/
+
+/* 
+-------------------- References --------------------
+    CSS Margins - https: //www.w3schools.com/css/css_margin.asp
+    ::after - https: //developer.mozilla.org/en-US/docs/Web/CSS/::after
+*/
+    

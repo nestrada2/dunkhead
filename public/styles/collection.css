@@ -1,0 +1,104 @@
+/* ------------------------------ Entire Page ------------------------------ */
+body {
+    height: 100vh; /* Fill the entire screen #c4bcb3 */
+    display: flex; /* Makes the Body a Flexbox - Can't fit on Line go to the Next Line */
+    flex-direction: column; /* Displays the Flex Items in the Flex Container to be Vertically Aligned - Stacked */
+}
+
+/* ------------------------------ Shoes ------------------------------ */
+.shoe-holder {
+    display: none; /* Hide Container in the beginning */
+}
+
+/* Div that Contains all the Shoes */
+.shoe-grid {
+    width: 50%;
+    margin: auto; /* Horizontally Center Element */
+    flex-grow: 1; /* gow as much as it can to fill the remaining space */
+    position: relative;
+}
+
+/* Shoe Header: Release Date & Silhoutte */
+.shoe-header {
+    padding-left: 40px;
+    text-align:left;
+    color: white;
+}
+
+/* Shoe's Nickname & Image */
+.shoe-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Shoe Image */
+#shoe-imgURL {
+    padding-right: 150px;
+}
+
+/* Shoe Nickname */
+#shoe-nickName {
+    margin-top: 10%;
+}
+
+/* Div that Contains the Shoe Box */
+.shoe-box {
+    position: absolute; /* Overlap Elements */
+    background-size: contain;
+    display: flex; /* Flexbox */
+}
+
+/* Shoe Images: Shoe & Box */
+.shoe-box img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto; /* Center the Image Horizontally */
+    display: block; /* Own Line and Cover the Entire Width of the Page*/
+}
+
+/* Box Image */
+.shoe-box-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Show Image Hover Effect */
+.shoe-box-img:hover {
+    opacity: 0.2; /* When Shoe Box Image is Hovered Show Hidden Image which is Placed Underneath it */
+}
+
+/* ------------------------------ Ready / Wallop ------------------------------ */
+.content {
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* Ready / Wallop Text */
+#ready, #wallop {
+    font-size: 100px;
+    font-weight: 550;
+    text-align: center;
+    z-index: 5;
+}
+
+/* Wallop Text */
+#wallop {
+    display: none; /* Hide Text */
+}
+
+/* ------------------------------ Footer ------------------------------ */
+.footer {
+    position: relative; /* Ensures footer stays at the bottom of the page */
+}
+
+/*
+-------------------- References -------------------- 
+    Box-Sizing - https: //www.w3schools.com/css/css3_box-sizing.asp 
+    Display Properties - https: //www.w3schools.com/cssref/pr_class_display.php
+    Flexbox - https: //css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/

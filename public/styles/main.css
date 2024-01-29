@@ -1,0 +1,64 @@
+/* Dunkhead Logo on Nav Bar */
+#logo {
+    display: none; /* Hide logo in the beginnning */
+}
+
+#video-wrapper {
+    position: relative; /* parent of an absolute (content) element always has to be relative */
+}
+
+/* Container with Title and Insert Coin */
+.content {
+    text-align: center;
+    margin-top: 10%;
+    position: absolute; /* Going on top of video so has to be absolute */
+    width: 100%;
+    z-index: 1;
+    display: none; /* Start by Hiding Title & Logo */
+}
+
+/* Dunkhead Title */
+.content h1 {
+    font-size: 160px;
+    font-weight: 600;
+    text-align: center; /* horizontal center */
+    justify-content: center; /* vertically centered */
+}
+
+/* Insert Coin */
+.content a {
+    color: rgb(238, 225, 225);
+    text-decoration: none; /* remove blue and underlining */
+    font-size: 24px;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+/* -------------------- Change Font Size when Screen Size is Medium: 1300px -------------------- */
+@media (max-width: 1300px) {
+    .content h1 {
+        font-size: 100px;
+        font-weight: 600;
+    }
+
+    .content a {
+        font-size: 18px;
+    }
+}
+
+/* -------------------- Change Font Size when Screen Size is Small: 800px -------------------- */
+@media (max-width: 800px) {
+    .content h1 {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .content a {
+        font-size: 10px;
+    }
+}
+
+/* 
+-------------------- References --------------------
+    Screen Width - https: //www.w3schools.com/howto/howto_js_get_current_window.asp
+*/

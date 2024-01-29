@@ -1,0 +1,339 @@
+/* ------------------------------ Page 1 ------------------------------ */
+#first-page {
+    height: 100%; /* Fill the entire screen */
+    width: 100vw; /* 100% viewport width (1) */
+    position: relative; /* parent of an absolute (coffee stain) element always has to be relative */
+}
+
+/* The Post Dunk Title */
+#main h4 {
+    font-size: 80px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* The Post Dunk Title Hover Effect */
+#paper-title:hover {
+    -webkit-text-stroke: 3px black;
+    transition: all ease 0.8s;
+    -webkit-transition: all 0.8s ease;
+}
+
+/* Coffee Stain Div */
+.coffee-stain {
+    position: absolute; /* Place directly on top of body */
+    z-index: 2; /* On top of EXTRA! tite */
+    left: 100px;
+}
+
+/* ---------- The Issue's Information  ---------- */
+#info {
+    display: flex; /* Makes it a Flexbox - Can't fit on Line go to the Next Line */
+    justify-content: space-between;
+    padding: 0 60px 0 60px; /* top, right, bottom, left */
+}
+
+/* Volume */
+#vol {
+    text-align: left;
+    font-size: 10px;
+}
+
+/* Date */
+#date {
+    text-align: center;
+    font-size: 10px;    
+}
+
+/* Price */
+#cost {
+    text-align: right;
+    font-size: 10px;
+}
+
+/* EXTRA! */
+#extra-title {
+    color: rgb(238, 225, 225);
+    background: rgb(37, 36, 36);
+    font-size: 120px !important; /* Overwrite #main h4 styling */
+    padding: 35px 0px 25px; /* top, (right & left), bottom */
+    letter-spacing: 10px;
+    margin: 0px 60px; /* (top & bottom), (right & left) */
+    text-transform: uppercase; /* (2) */
+}
+
+/* ---------- Advertisements ---------- */
+#ads {
+    height: 430px;
+    display: flex; /* Makes it a Flexbox - Can't fit on Line go to the Next Line */
+    align-items: center; /* Vertically Align */
+    justify-content: space-between;
+    padding: 40px 60px; /* (top & bottom), (right & left) */
+
+    /* Advertisement Texts */
+    & p {
+        font-size: 12px;
+        margin: 20px 0px; /* (top & bottom), (right & left) */
+        font-weight: 10;
+    }
+}
+
+/* Staple Ad */
+#ad1 {
+    width: 30%;
+    height: 100%;    
+}
+
+/* Coupon */
+#coupon {
+    width: 30%;
+    height: 100%;
+    padding: 20px 60px; /* (top & bottom), (right & left) */
+    text-align: center;
+}
+
+/* Nike by You Ad */
+#ad2 {
+    width: 30%;
+    height: 100%;
+}
+
+/* ---------- Ad's Image ---------- */
+/* Ad's Image Div Size */
+.image {
+    height: 60%;
+    width: 100%;
+    overflow: hidden; /* when image is clipped can't see parts of the image that are not contain within the class's dimensions */
+}
+
+/* Ad's Image */
+.image img {
+    /* Settings Keep Full Image Intact */
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Maintain aspect ratio, clip image if needed */
+}
+
+/* Image: Hover Effect - Zoom In */
+.image:hover img {
+    scale: 1.2;
+    transition: all ease 0.8s;
+}
+
+/* Ad's New / Custom */
+.new {
+    background-color: orangered;
+    color: rgb(238, 225, 225);
+    padding: 4px; /* all 4 padding properties */
+    border-radius: 5px; /* Round off Border */
+    margin-left: 10px;
+}
+
+/* New / Custom: Hover Effect */
+.new:hover {
+    -webkit-animation: flash 1s;
+    animation: flash 1s;
+}
+
+/* ------------------------------ Page 2 ------------------------------ */
+#second-page {
+    /* Settings to Fill the entire screen */
+    height: 100%; 
+    width: 100%;
+
+    display: flex; /* Make it a flexbox */
+    align-items: stretch; /* All Items same height */
+    justify-content: space-between;
+    padding: 90px 40px; /* (top & bottom), (right & left) */
+}
+
+/* ---------- Page 2 Layout ---------- */
+/* Upcoming: Page 2 Left Side */
+#page-two-left {
+    height: 100%;
+    width: 35%;
+    padding-right: 50px;
+}
+
+/* Unconfirmed: Page 2 Middle */
+#page-two-mid {
+    height: 100%;
+    width: 35%;
+    padding-right: 50px;
+}
+
+/* Past: Page 2 Right Side */
+#page-two-right {
+    height: 100%;
+    width: 35%;
+    padding-right: 50px;
+}
+
+/* ---------- Page 2 Text ---------- */
+/* 2nd Page's H2s */
+#second-page h2 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 2nd Page's H2s: Hover Effect */
+#second-page h2:hover {
+    -webkit-text-stroke: 0.5px black;
+    transition: all ease 0.8s;
+    -webkit-transition: all 0.8s ease;
+    text-decoration: underline;
+}
+
+/* Upcoming: Hover Effect */
+#upcoming:hover {
+    -webkit-animation: shakeY 1s;
+    animation: shakeY 1s;
+}
+
+/* Unconfirmed: Hover Effect */
+#unconfirmed:hover {
+    -webkit-animation: shakeX 1s;
+    animation: shakeX 1s;
+}
+
+/* Past: Hover Effect */
+#past:hover {
+    -webkit-animation: tada 1s;
+    animation: tada 1s;
+}
+
+/* If a Section here has NO shoes (upcoming, unconfirmed, past) */
+.shoes-empty-msg {
+    margin: auto;
+    font-size: 20px;
+}
+
+/* ---------- Shoe Styling ---------- */
+/* Shoe Parent Div */
+.shoe {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Shoe Img Div */
+.shoe-img {
+    width: 50%;
+    margin: auto;
+}
+
+/* Shoe Images */
+.shoe-img img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Shoe Name */
+.shoe-name {
+    font-weight: bold;
+    margin: 20px 0px 5px; /* top, (right & left), bottom */
+    text-align: center;
+}
+
+/* Shoe Details */
+.shoe-detail {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+/* Shoe Name & Details */
+.shoe-name, .shoe-detail {
+    font-size: 10px;
+}
+
+/* ------------------------------ Page 3 ------------------------------ */
+#page-three {
+    display: flex; /* Make it a Flexbox */
+    align-items: center; /* Verically Centered */
+    justify-content: space-between;
+}
+
+/* ---------- Page 3 Left Side ---------- */
+#page-three-left {
+    padding: 40px 60px;
+}
+
+/* Dunkhead */
+#page-three h1 {
+    color: white;
+    background-color: rgb(239, 15, 15);
+    text-align: center;
+    width: fit-content;
+    text-shadow: #c4bcb3;
+    font-weight: bold;
+    font-size: 65px;
+    font-weight: 100;
+    padding: 10px 20px; /* (top & bottom), (right & left) */
+    line-height: 160px;
+    margin: 0 auto; /* (top & bottom), (right & left) */
+}
+
+/* ---------- Page 3 Right Side ---------- */
+#page-three-right {
+    padding: 40px 60px; /* (top & bottom), (right & left) */
+}
+
+/* Nike SB Logo */
+#sb-logo {
+    width: 55%;
+    
+    /* Below Settings are to Adjust Image's Position */
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+/* ------------------------------ Page 4 ------------------------------ */
+
+#page-four {
+    position: relative; /* Need this because the child is absolute (tag) */
+}
+
+/* Background Video */
+.back-video {
+    width: 100%;
+    z-index: -1; /* Makes the Background Video Behind HTML - without it can't see the title dunkhead */
+}
+
+/* Haze Tag */
+.tags {
+    position: absolute;
+    z-index: 2;
+    right: 80px;
+    top: 100px; /* pixels away from the top of the parent */
+}
+
+.tags img {
+    height: 100px;
+    width: 120px;
+    rotate: 15deg;
+}
+
+/* ------------------------------ Footer ------------------------------ */
+.footer {
+    position: relative; /* Ensures footer stays at the bottom of the page */
+}
+
+/* 
+-------------------- Footnotes --------------------
+    1. displayed proportionally to the device's screen width regardless of it' s resolution. This makes it super easy 
+    to ensure your website is displayed exactly the same in both workstation and mobile.
+
+    2. Overwriting the Universal's Selector (*) Styling for All Texts to be Lowercase that was set up in style.css
+*/
+
+/*
+-------------------- References --------------------
+    Text Outline - https: //kinsta.com/blog/css-text-outline/
+    Letter Spacing - https: //developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+    Margins - https: //www.w3schools.com/css/css_margin.asp
+    Object-Fit Property - https: //www.w3schools.com/css/css3_object-fit.asp
+    Postion Text over Image - https: //www.w3schools.com/howto/howto_css_image_text.asp
+    Center Image - https: //www.w3schools.com/howto/howto_css_image_center.asp 
+    Animate CSS - https: //github.com/animate-css/animate.css/issues/170
+    Animate Change Background - https: //www.w3schools.com/cssref/tryit.php?filename=trycss_animatable
+    Maintain Animation Values - https: //developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode

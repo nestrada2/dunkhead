@@ -1,0 +1,128 @@
+<!-- Confirmation Message after Submitting -->
+<div class="contact-confirmation">
+</div>
+
+<!-- Sign Up Form (1) -->
+<form class="contact-form animate__animated animate__bounceInDown" onsubmit="event.preventDefault();">
+    <!-- Username -->
+    <div class="form-group row">
+        <label for="sign-up-name" class="col-form-label">name:</label>
+        <div>
+            <input type="text" class="form-control" id="sign-up-name" placeholder="my alter ego is...">
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group row">
+        <label for="sign-up-email" class="col-form-label">email:</label>
+        <div>
+            <input type="email" class="form-control" id="sign-up-email" placeholder="spam me @">
+        </div>
+    </div>
+
+    <!-- Favorite Dunk -->
+    <div class="form-group row">
+        <label for="sign-up-dunk" class="col-form-label">dunk:</label>
+        <div>
+            <input type="email" class="form-control" id="sign-up-dunk" placeholder="my go-to dunk is...">
+        </div>
+    </div>
+
+    <!-- Favorite Food -->
+    <div class="form-group row">
+        <label for="sign-up-food" class="col-form-label">food:</label>
+        <div>
+            <input type="email" class="form-control" id="sign-up-food" placeholder="i like to gulp...">
+        </div>
+    </div>
+
+    <!-- -------------------- Radio Button -------------------- -->
+    <!-- Man -->
+    <div class="from-group-row form-check">
+        <input class="form-check-input" type="radio" name="gender" id="login-man" value="man">
+        <label class="form-check-label" for="sign-up-man">
+            man
+        </label>
+    </div>
+
+    <!-- Woman -->
+    <div class="from-group-row form-check">
+        <input class="form-check-input" type="radio" name="gender" id="login-woman" value="woman">
+        <label class="form-check-label" for="sign-up-woman">
+            woman
+        </label>
+    </div>
+
+    <!-- Neutral -->
+    <div class="from-group-row form-check">
+        <input class="form-check-input" type="radio" name="gender" id="login-neutral" value="neutral">
+        <label class="form-check-label" for="sign-up-neutral">
+            really? no comment
+        </label>
+    </div>
+
+    <br>
+
+    <!-- Buttons -->
+    <div class="form-group row">
+        <div>
+            <!-- Submit -->
+            <button class="nes-btn is-primary" id="sup-btn">yup</button>
+            <!-- Reset -->
+            <button type="reset" class="nes-btn is-error" id="nvm-btn">nah</button>
+        </div>
+    </div>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade modal-lg alert-box" tabindex="-1" aria-labelledby="validation-errors" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Modal Title (2) -->
+                <h1 class="modal-title fs-5" id="validation-errors-title"></h1>
+
+                <!-- Close Button -->
+                <button type="button" class="btn nes-btn" id="alert-close-btn" data-bs-dismiss="modal"
+                    aria-label="Close">x
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Warning! Title -->
+                <h1>warning!</h1>
+                <br>
+                <!-- Validation Error Message -->
+                <span class="pop-up-message"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#section 'script'}}
+<!-- Contact CSS -->
+<link rel="stylesheet" type="text/css" href="/public/styles/contact.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- JavaScript File -->
+<script src="/public/scripts/contact.js" defer></script>
+<!-- defer - load html first, then run JS -->
+{{/section}}
+
+<!-- -------------------- Footnotes --------------------
+    1. use 'onsubmit="event.preventDefault();' on form tag to prevent default of browser creating object to 
+    send to server, doing the object through ajax prevent page from reloading so that text appears right after 
+    the animation same form can animate out, without it the page reloads. 
+
+    2. Default bootstrap styling, leave empty otherwise if remove h1 tag header than the close button get aligns to the 
+    left of the modal instead of the right.
+-->
+
+<!-- -------------------- References --------------------
+     Bootstrap Form - https://getbootstrap.com/docs/4.0/components/forms/
+    Center a Website - https://www.w3schools.com/howto/howto_css_center_website.asp
+    Alert Message - https://www.w3schools.com/howto/howto_js_alert.asp
+-->

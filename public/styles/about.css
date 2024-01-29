@@ -1,0 +1,80 @@
+/* ------------------------------ About ------------------------------ */
+.about {
+    position: absolute; /* Goes directly on top of the Video, otherwise text goes above Video */
+    top: 15vh;
+    left: 5vw;
+    right: 50vw;
+    z-index: 1; /* Otherwise Hover Effects for dunkhead and Name will NOT Appear */   
+}
+
+/* About Title */
+.about h1 {
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center; /* horizonal center */
+    justify-content: center; /* vertical center */
+}
+
+/* Dunkhead: Hover Effect */
+.dunkhead:hover {
+    color: white;
+    background-color: rgb(239, 15, 15);
+    width: fit-content;
+    text-shadow: #c4bcb3;
+    font-weight: bold;
+}
+
+/* Nike SB Logo */
+#sb-logo {
+    display: none; /* Hide Image */
+    width: 20%;
+}
+
+/* Nike Dunk SB: Hover Effect */
+#sb-text:hover {
+    color: transparent; /* Hide Text */
+
+    & #sb-logo {
+        display: inline; /* Show Image when Hover SB Text */
+    }
+}
+
+/* Name: Hover Effect */
+#nino:hover {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* -------------------- Change Font Size when Screen Size is Medium: 1312px -------------------- */
+@media (max-width: 1312px) {
+    .about h1 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .about span {
+        font-size: 12px;
+    }
+}
+
+/* -------------------- Change Font Size when Screen Size is Small: 853px -------------------- */
+@media (max-width: 853px) {
+    .about {
+        top: 10vh;
+    }
+    .about h1 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .about span {
+        font-size: 8px;
+    }
+}
+
+/*
+-------------------- References --------------------
+    Text Decoration - https: //developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
+    CSS Nesting - https: //www.w3.org/TR/css-nesting-1/
+*/

@@ -1,30 +1,45 @@
 <div class="video-wrapper">
-    <!-- About -->
-    <div class="about">
-        <h1 class="animate__animated animate__bounce">about</h1>
-        <span id="about-body"></span>
-    </div>
-    <!-- Background Video -->
-    <video autoplay muted plays-inline width="100%" height="auto" class="back-video">
-        <source src="/public/videos/dunkhead.mp4#t=29" type="video/mp4">
-    </video>
+  <!-- About -->
+  <div class="about">
+    <h1 class="animate__animated animate__bounce">about</h1>
+    <span id="about-body"></span>
+  </div>
+
+  <!-- Background Video -->
+  <video
+    autoplay
+    muted
+    plays-inline
+    width="100%"
+    height="auto"
+    class="back-video"
+    preload="none"
+  >
+    <source src="/public/videos/dunkhead.mp4#t=29" type="video/mp4" />
+  </video>
 
 </div>
 
-{{#section 'script'}}
-    <!-- About CSS -->    
-    <link rel="stylesheet" type="text/css" href="/public/styles/about.css">
+{{#section "script"}}
+  <!-- About CSS -->
+  <link rel="stylesheet" type="text/css" href="/public/styles/about.css" />
 
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    
-    <!-- Typed JS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
-    <!-- defer - load html first, then run JS -->
+  <!-- Animate CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
-    <!-- JavaScript File -->
-    <script type="text/javascript" src="/public/scripts/about.js" defer></script>
-    <!-- defer - load html first, then run JS -->
+  <!-- Typed JS -->
+  <script
+    src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
+    defer
+  ></script>
+  <!-- defer - load html first, then run JS -->
+
+  <!-- JavaScript File -->
+  <script type="text/javascript" src="/public/scripts/about.js" defer></script>
+  <!-- defer - load html first, then run JS -->
 {{/section}}
 
 <!-- -------------------- References --------------------

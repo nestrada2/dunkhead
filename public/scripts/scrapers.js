@@ -19,7 +19,7 @@ async function scrapeProduct(type)
     // Select Shoe's Images, Names, & Details by xPath & Stored them in Separate Arrays
     const imgArr = await page.$x('//*[@id="main-content"]/div/main/article/div[1]/a/img');
     const shoeNameArr = await page.$x('//*[@id="main-content"]/div/main/article/div[2]/h2');
-    const shoeDetailArr = await page.$x('//*[@id="main-content"]/div/main/article/div[2]/div/p');
+    const shoeDetailArr = await page.$x('//*[@id="main-content"]/div/main/article/div[2]/div/p[1]');
 
     // Array to Store ONLY Nike Dunk SB 
     let shoes = [];

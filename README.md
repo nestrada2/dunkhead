@@ -10,7 +10,7 @@ This program is designed to create a sneaker enthusiasts' website to provide new
 | NES CSS     |                 | Sneaks API |
 | Animate.css |                 | Puppeteer  |
 |             |                 | GSAP       |
-|             |                 | Moment.js  |
+|             |                 | Moment JS  |
 
 ### **Run the Program**
 ```
@@ -31,7 +31,7 @@ Bootstrap,
 NES CSS,
 Animate.css,
 Sneaks API, 
-Moment.js,
+Moment JS,
 Puppeteer,
 GSAP,
 Nice Kicks,

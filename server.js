@@ -1,5 +1,5 @@
 // Constants
-const PORT = 3000, HOST = 'localhost', ROOT = '/', DIR = __dirname + '/logs', FILE_LOG = DIR + '/log.txt', HTML = "";
+const PORT = 3000, HOST = 'localhost', ROOT = '/', DIR = __dirname + '/logs', FILE_LOG = DIR + '/log.txt';
 
 // File Exist
 const fs = require('fs');
@@ -71,18 +71,14 @@ app.use(function (error, req, res, next)
 // -------------------- Server --------------------
 const server = app.listen(PORT, HOST, function () 
 {
-    // File Exist - Boolean Value
-    let validFile = fs.existsSync(DIR);
+  // File Exist - Boolean Value
+  let validFile = fs.existsSync(DIR);
 
-    // File Doesn't Exist
-    if (!validFile) 
-    {
-        // Create Directory
-        fs.mkdirSync(DIR);
-    }
-
-    // Log with Time Stamp
-    fLog(`Server started on: ${HOST}: ${PORT}}`, true);
+  // File Doesn't Exist Create Directory
+  if (!validFile) fs.mkdirSync(DIR);
+  
+  // Log with Time Stamp
+  fLog(`Server started on: ${HOST}: ${PORT}}`, true);
 })
 
 // Checks to Add Time Stamp to Message

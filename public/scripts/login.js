@@ -1,89 +1,87 @@
-$(function () 
-{
-    // Contact Form's Submit Button was Clicked
-    $('#yep-btn').click(function () {
-        // Form Values
-        let username = $('#login-name').val(), password = $('#login-password').val();
+$(function () {
+  // Contact Form's Submit Button was Clicked
+  $("#sup-login-btn").click(function () {
+    // Form Values
+    const username = $("#login-name").val();
+    const password = $("#login-password").val();
 
-        let data = {
-            username: username,
-            password: password
-        }
+    let data = {
+      username: username,
+      password: password,
+    };
 
-        // Contructing Error Message
-        let message = [];
+    // Contructing Error Message
+    let message = [];
 
-        // No Usrname
-        if (username === "") {
-            // Build Error Message
-            message.push("hmmm. You left no username, so I don't know what your alter ego is.");
-        }
+    // Error Messages
+    let noUsername =
+      "hmmm. You left no username, so I don't know what your alter ego is.";
+    let noPassword =
+      "oh-oh! You left no password, so I can't double-check if you are who you say you are.";
 
-        // No Password
-        if (password === "") 
-        {
-            // Build Error Message
-            message.push("oh-oh! You left no password, so I can't double-check if you are who you say you are.");
-        }
-        // Not a Valid password: Regex
-        // else if (!/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
-        //     // Build Error Message
-        //     message.push("oh-no! You didn't provide a valid email, so if I respond to you, you will not receive it.");
-        // }
+    // No Usrname
+    if (username === "") message.push(noUsername);
 
-        // If There is an Error Message, then We Show It
-        if (message.length != 0) 
-        {
-            // Construct Modal
-            const modal = new bootstrap.Modal('.alert-box');
-            modal.show();
+    // No Password
+    if (password === "") message.push(noPassword);
 
-            $(".pop-up-message").html('<p>' + message.join('</p><p style="text-align: center;">&</p><p>') + '</p>');
-        }
-        // Post Login Data to the Server
-        else {
-            $.post('/login_post', data,
-                // Callback Function - Message
-                function (data) 
-                {
-                    // Remove the Orginal Animation Class and Adds the Exit Animation Class
-                    $('.contact-form').removeClass("animate__bounceInLeft").addClass("animate__bounceOutRight");
+    // If There is an Error Message, then We Show It
+    if (message.length != 0) {
+      createModal(message);
+    }
+    // Post Login Data to the Server
+    else {
+      $.post(
+        "/login_post",
+        data,
+        // Callback Function - Message
+        function (data) {
+          // Remove the Orginal Animation Class and Adds the Exit Animation Class
+          $(".contact-form")
+            .removeClass("animate__bounceInLeft")
+            .addClass("animate__bounceOutRight");
 
-                    // Checks/Waits when New Animation Ends
-                    $('.contact-form')[0].addEventListener('animationend', function () 
-                    {
-                        // Stylize/Center the Contact Confirmation Message
-                        $('.login-confirmation').css("padding", "100px 40px 40px 40px");
+          // Checks/Waits when New Animation Ends
+          $(".contact-form")[0].addEventListener("animationend", function () {
+            // Stylize/Center the Contact Confirmation Message
+            $(".login-confirmation").css("padding", "100px 40px 40px 40px");
 
-                        $(".login-confirmation").append(`Hey ${data.username}!<br>
-                        welcome back! <i class="nes-icon heart"></i> We missed you!<br>
-                        <span id="login-afterthough">
-                        </span>
-                        `);
+            let welcomeBackMessage = `Hey ${data.username}!<br>
+                welcome back! <i class="nes-icon heart"></i> We missed you!<br>
+                <span id="login-afterthough"></span>`;
 
-                        // Start Afterthough Text in 3 Seconds
-                        setTimeout(afterthough, 3000);
-                    })
-                },
-                'json'
-            )
-        }
-    })
-})
+            $(".login-confirmation").append(welcomeBackMessage);
+
+            // Start Afterthough Text in 3 Seconds
+            setTimeout(afterthough, 3000);
+          });
+        },
+        "json"
+      );
+    }
+  });
+});
+
+// Helper Function: Create a Modal
+function createModal(message) {
+  // Construct Modal
+  const modal = new bootstrap.Modal(".alert-box");
+  modal.show();
+
+  $(".pop-up-message").html(
+    "<p>" + message.join('</p><p style="text-align: center;">&</p><p>') + "</p>"
+  );
+}
 
 // Afterthough Text Typed
-function afterthough()
-{
-    let typed = new Typed('#login-afterthough',
-        {
-            strings: ['...<br>...<br>...<br>well, sort of.'],
-            typeSpeed: 100,
-        });
+function afterthough() {
+  new Typed("#login-afterthough", {
+    strings: ["...<br>well, sort of."],
+    typeSpeed: 100,
+  });
 }
 
 /*
 -------------------- References --------------------
     Check if Animation Ends - https://animate.style/
-    Regex - https://stackoverflow.com/questions/6603015/check-whether-a-string-matches-a-regex-in-js
-    Valid Email - https://www.geeksforgeeks.org/how-to-validate-email-id-in-jquery/
 */

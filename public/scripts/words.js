@@ -12,6 +12,7 @@ let positiveWords = [
   "affability",
   "agathist",
   "alive",
+  "amazing",
   "amuse",
   "animated",
   "approve",

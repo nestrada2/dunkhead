@@ -9,10 +9,6 @@
     text-transform: lowercase;
 }
 
-body {
-    background-color: #cbc4b9 !important;
-}
-
 /* ------------------------------  Navagation Bar ------------------------------ */
 .navbar {
     background:transparent; /* so goes directly on top of the page (1) */

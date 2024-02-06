@@ -1,5 +1,15 @@
 $(function()
 {
+    // Gray Scale the Site
+    $('body').addClass('grey');
+
+    setTimeout(function()
+    {
+        // Add Color to the Site
+        $('body').delay("slow").removeClass('grey');
+        $("body").delay("slow").addClass("color");
+    }, 5000);
+
     // Getting Shoe Informaiton Scrapers for a Given Type
     let getShoes = function(type) {
         $.ajax('/get-shoes', {

@@ -1,3 +1,15 @@
+/* ------------------------------ Entire Page ------------------------------ */
+.grey {
+    -moz-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    filter: gray; /* IE6-9 */
+    filter: grayscale(1);
+}
+
+.color {
+    background-color: #cbc4b9;
+}
+
 /* ------------------------------ Page 1 ------------------------------ */
 #first-page {
     height: 100%; /* Fill the entire screen */
@@ -12,9 +24,17 @@
     text-align: center;
 }
 
+/* The Post Dunk Title */
+#paper-title {
+    color: black;
+    -webkit-text-stroke: 3px white;
+    letter-spacing: 5px;
+}
+
 /* The Post Dunk Title Hover Effect */
 #paper-title:hover {
-    -webkit-text-stroke: 3px black;
+    color: white;
+    -webkit-text-stroke: 3px white;
     transition: all ease 0.8s;
     -webkit-transition: all 0.8s ease;
 }
@@ -53,7 +73,7 @@
 
 /* EXTRA! */
 #extra-title {
-    color: rgb(238, 225, 225);
+    color: rgb(255, 255, 255);
     background: rgb(37, 36, 36);
     font-size: 120px !important; /* Overwrite #main h4 styling */
     padding: 35px 0px 25px; /* top, (right & left), bottom */
@@ -175,6 +195,9 @@
     font-size: 26px;
     text-align: center;
     font-weight: bold;
+    color: black;
+    -webkit-text-stroke: 0.2px white;
+    letter-spacing: 2px;
 }
 
 /* 2nd Page's H2s: Hover Effect */
@@ -214,6 +237,8 @@
 .shoe {
     border: 1px solid black;
     border-radius: 5px;
+    background: rgb(37, 36, 36);
+    color: white;
 }
 
 /* Shoe Img Div */

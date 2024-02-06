@@ -1,109 +1,111 @@
 // Puppeteer API - Web Scraping
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 
 // Scrape Product (2)
-async function scrapeProduct(type)
-{
-    // Launch the Browser
-    const browser = await puppeteer.launch();
+async function scrapeProduct(type) {
+  // Launch the Browser
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
 
-    // Create Page
-    const page = await browser.newPage();
+  // Create Page
+  const page = await browser.newPage();
 
-    // Go to Website (1)
-    await page.goto("https://www.nicekicks.com/nike-dunk-release-dates/?nk=" + type);
+  // Go to Website (1)
+  await page.goto(
+    "https://www.nicekicks.com/nike-dunk-release-dates/?nk=" + type
+  );
 
-    // Call Helper Function: Keep Scrolling Till Resolution
-    await autoScroll(page);
+  // Call Helper Function: Keep Scrolling Till Resolution
+  await autoScroll(page);
 
-    // Select Shoe's Images, Names, & Details by xPath & Stored them in Separate Arrays
-    const imgArr = await page.$x('//*[@id="main-content"]/div/main/article/div[1]/a/img');
-    const shoeNameArr = await page.$x('//*[@id="main-content"]/div/main/article/div[2]/h2');
-    const shoeDetailArr = await page.$x('//*[@id="main-content"]/div/main/article/div[2]/div/p[1]');
+  // Select Shoe's Images, Names, & Details by xPath & Stored them in Separate Arrays
+  const imgArr = await page.$x(
+    '//*[@id="main-content"]/div/main/article/div[1]/a/img'
+  );
+  const shoeNameArr = await page.$x(
+    '//*[@id="main-content"]/div/main/article/div[2]/h2'
+  );
+  const shoeDetailArr = await page.$x(
+    '//*[@id="main-content"]/div/main/article/div[2]/div/p[1]'
+  );
 
-    // Array to Store ONLY Nike Dunk SB 
-    let shoes = [];
+  // Array to Store ONLY Nike Dunk SB
+  let shoes = [];
 
-    // Loop Through the Names of All the Upcoming Shoes
-    for (let i = 0; i < shoeNameArr.length; i += 1)
-    {
-        // Current Shoe
-        const el = shoeNameArr[i];
-        const txt = await el.getProperty('textContent');
-        const shoe = await txt.jsonValue();
+  // Loop Through the Names of All the Upcoming Shoes
+  for (let i = 0; i < shoeNameArr.length; i += 1) {
+    // Current Shoe
+    const el = shoeNameArr[i];
+    const txt = await el.getProperty("textContent");
+    const shoe = await txt.jsonValue();
 
-        // Check if Current Shoe is a Nike Dunk SB
-        if (shoe.includes('SB'))
-        {
-            // Retrieve Shoe's Image
-            const el2 = imgArr[i];
-            const src = await el2.getProperty('src');
-            const imgURL = await src.jsonValue();
+    // Check if Current Shoe is a Nike Dunk SB
+    if (shoe.includes("SB")) {
+      // Retrieve Shoe's Image
+      const el2 = imgArr[i];
+      const src = await el2.getProperty("src");
+      const imgURL = await src.jsonValue();
 
-            // Retrieve Shoe's Details
-            const el3 = shoeDetailArr[i];
-            const txt2 = await el3.getProperty('textContent');
-            let detail = await txt2.jsonValue();
-           
-            // Add Spaces Between Shoe's Detail
-            detail = detail.replace("Style", "<br>Style");
-            detail = detail.replace("Release Date", "<br>Release Date");
-            detail = detail.replace("Price", "<br>Price");
-            
-            // Add the Current Nike Dunk SB in the Shoes Array
-            shoes.push({shoe: shoe, imgURL: imgURL, detail: detail});
-        }
+      // Retrieve Shoe's Details
+      const el3 = shoeDetailArr[i];
+      const txt2 = await el3.getProperty("textContent");
+      let detail = await txt2.jsonValue();
+
+      // Add Spaces Between Shoe's Detail
+      detail = detail.replace("Style", "<br>Style");
+      detail = detail.replace("Release Date", "<br>Release Date");
+      detail = detail.replace("Price", "<br>Price");
+
+      // Add the Current Nike Dunk SB in the Shoes Array
+      shoes.push({ shoe: shoe, imgURL: imgURL, detail: detail });
     }
+  }
 
-    // Closes the Browser
-    browser.close();
+  // Closes the Browser
+  browser.close();
 
-    // Return Shoes to use for Dunkhead Server
-    return shoes;
+  // Return Shoes to use for Dunkhead Server
+  return shoes;
 }
 
 // Helper Function: Scroll Page
-async function autoScroll(page) 
-{
-    // Wait till the Page Loads (4)
-    await page.evaluate(async function() 
-    {
-        // Promise return something when done loading
-        await new Promise(function(resolve) 
-        {
-            // Keep Track of the Amount We've Scrolled
-            let amountScrolled = 0;
-            
-            // How Far Down to Scroll
-            let distance = window.innerHeight * 0.3;
+async function autoScroll(page) {
+  // Wait till the Page Loads (4)
+  await page.evaluate(async function () {
+    // Promise return something when done loading
+    await new Promise(function (resolve) {
+      // Keep Track of the Amount We've Scrolled
+      let amountScrolled = 0;
 
-            // Scroll the Page Every 20 milliseconds (3)
-            let timer = setInterval(function() 
-            {
-                // Total Height of the Webpage
-                let totalPageHeight = document.body.scrollHeight;
+      // How Far Down to Scroll
+      let distance = window.innerHeight * 0.3;
 
-                // Height of the Current View of the Page
-                let viewportHeight = window.innerHeight;
-                
-                // scrolling by 30% of the Viewport each Time
-                window.scrollBy(0, distance);
+      // Scroll the Page Every 20 milliseconds (3)
+      let timer = setInterval(function () {
+        // Total Height of the Webpage
+        let totalPageHeight = document.body.scrollHeight;
 
-                // Update Height - Keeping Track how Much Total we Scrolled by
-                amountScrolled += distance;
+        // Height of the Current View of the Page
+        let viewportHeight = window.innerHeight;
 
-                // Checking if We Already Scrolled to the Bottom
-                if (amountScrolled >= totalPageHeight - viewportHeight) 
-                {
-                    // Stop Scrolling
-                    clearInterval(timer);
+        // scrolling by 30% of the Viewport each Time
+        window.scrollBy(0, distance);
 
-                    // Terminate Thread 
-                    resolve();
-                }
-            }, 20);
-        });
+        // Update Height - Keeping Track how Much Total we Scrolled by
+        amountScrolled += distance;
+
+        // Checking if We Already Scrolled to the Bottom
+        if (amountScrolled >= totalPageHeight - viewportHeight) {
+          // Stop Scrolling
+          clearInterval(timer);
+
+          // Terminate Thread
+          resolve();
+        }
+      }, 20);
     });
+  });
 }
 
 module.exports = scrapeProduct;

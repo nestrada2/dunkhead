@@ -12,6 +12,11 @@ This program is designed to create a sneaker enthusiasts' website to provide new
 |             |                 | GSAP       |
 |             |                 | Moment JS  |
 
+### **Install the Program**
+```
+npm install
+```
+
 ### **Run the Program**
 ```
 node server.js

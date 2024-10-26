@@ -13,7 +13,7 @@ async function scrapeProduct(type) {
 
   // Go to Website (1)
   await page.goto(
-    "https://www.nicekicks.com/nike-dunk-release-dates/?nk=" + type
+    "https://www.kicksonfire.com/tag/nike-sb-dunk?sort=" + type
   );
 
   // Call Helper Function: Keep Scrolling Till Resolution
@@ -21,13 +21,13 @@ async function scrapeProduct(type) {
 
   // Select Shoe's Images, Names, & Details by xPath & Stored them in Separate Arrays
   const imgArr = await page.$x(
-    '//*[@id="main-content"]/div/main/article/div[1]/a/img'
+    '//*[@class="release-item-image"]/img'
   );
   const shoeNameArr = await page.$x(
-    '//*[@id="main-content"]/div/main/article/div[2]/h2'
+    '//*[@class="release-item-title"]'
   );
   const shoeDetailArr = await page.$x(
-    '//*[@id="main-content"]/div/main/article/div[2]/div/p[1]'
+    '//*[@class="release-price-from"]'
   );
 
   // Array to Store ONLY Nike Dunk SB
@@ -51,11 +51,6 @@ async function scrapeProduct(type) {
       const el3 = shoeDetailArr[i];
       const txt2 = await el3.getProperty("textContent");
       let detail = await txt2.jsonValue();
-
-      // Add Spaces Between Shoe's Detail
-      detail = detail.replace("Style", "<br>Style");
-      detail = detail.replace("Release Date", "<br>Release Date");
-      detail = detail.replace("Price", "<br>Price");
 
       // Add the Current Nike Dunk SB in the Shoes Array
       shoes.push({ shoe: shoe, imgURL: imgURL, detail: detail });
@@ -112,10 +107,10 @@ module.exports = scrapeProduct;
 
 /*
 -------------------- Footnotes --------------------
-    1. Type can be either upcoming, unconfirmed, or past. All have the same URL except for last part after '='. 
-    https://www.nicekicks.com/nike-dunk-release-dates/?nk=upcoming
-    https://www.nicekicks.com/nike-dunk-release-dates/?nk=unconfirmed
-    https://www.nicekicks.com/nike-dunk-release-dates/?nk=past
+    1. Type can be either upcoming, popular, or past. All have the same URL except for last part after '='. 
+    https://www.kicksonfire.com/tag/nike-sb-dunk?sort=upcoming
+    https://www.kicksonfire.com/tag/nike-sb-dunk?sort=popular
+    https://www.kicksonfire.com/tag/nike-sb-dunk?sort=past
 
     2. 'async' creates a new thread anytime you call it therefore you have to tell javascript please wait for it to finish 
     before trying to store the information it returns. 'await' blocks the current thread until it is finished running.

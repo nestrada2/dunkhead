@@ -32,12 +32,15 @@ $(function()
                 {
                     // Shoe Details
                     let shoeDetail = shoe.detail;
-                    
-                    // Add Bold Text for Shoe Specifications
-                    shoeDetail = shoeDetail.replace('Colorway', '<strong>Colorway</strong>');
-                    shoeDetail = shoeDetail.replace('Style', '<strong>Style</strong>');
-                    shoeDetail = shoeDetail.replace('Release Date', '<strong>Release Date</strong>');
-                    shoeDetail = shoeDetail.replace('Price', '<strong>Price</strong>');
+
+                    if (shoeDetail[0] == "$")
+                    {
+                        shoeDetail = `Price: ${shoeDetail}`;
+                    }
+                    else
+                    {
+                        shoeDetail = `Date: ${shoeDetail}`;
+                    }
 
                     // Dynamically Create Shoe Div for a Given Type
                     $(`#${type}-shoes`).append(`
@@ -69,7 +72,7 @@ $(function()
 
     // Call Scraper for each Type
     getShoes("upcoming");
-    getShoes("unconfirmed");
+    getShoes("popular");
     getShoes("past");    
 })
 

@@ -175,7 +175,7 @@
     padding-right: 50px;
 }
 
-/* Unconfirmed: Page 2 Middle */
+/* Popular: Page 2 Middle */
 #page-two-mid {
     height: 100%;
     width: 35%;
@@ -214,8 +214,8 @@
     animation: shakeY 1s;
 }
 
-/* Unconfirmed: Hover Effect */
-#unconfirmed:hover {
+/* Popular: Hover Effect */
+#popular:hover {
     -webkit-animation: shakeX 1s;
     animation: shakeX 1s;
 }
@@ -226,7 +226,7 @@
     animation: tada 1s;
 }
 
-/* If a Section here has NO shoes (upcoming, unconfirmed, past) */
+/* If a Section here has NO shoes (upcoming, popular, past) */
 .shoes-empty-msg {
     margin: auto;
     font-size: 20px;

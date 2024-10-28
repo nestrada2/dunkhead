@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://dunkhead-f335b4ce798d.herokuapp.com/">
-    <img src="/Volumes/NINO'S SSD 1/Final/public/img/Dunk Sb Pixel Art/Silver Box/takashi_rotate.png" alt="Logo" width="80" height="43">
+    <img src="public/img/Dunk Sb Pixel Art/Silver Box/takashi_rotate.png" alt="Logo" width="80" height="43">
   </a>
 
   <h3 align="center" style="font-size: 2.1em; font-weight: bolder;">dunkhead</h3>
@@ -25,7 +25,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About the Project</a>
       <ul>
         <li><a href="#tech-stack">Tech Stack</a></li>
       </ul>
